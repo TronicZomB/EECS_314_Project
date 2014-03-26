@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Computer Architecture Exploration</string>
+    <string name="title_section1">CPU Time</string>
+    <string name="title_section2">Comparison</string>
+    <string name="title_section3">Amdahl\'s Law</string>
+    <string name="title_section4">Pipelining</string>
+    <string name="action_glossary">Glossary</string>
+    <string name="action_settings">Settings</string>
+    <string name="cpu_time_definition"><b>CPU Time</b> is the time spent processing a given job, discounting I/O time and other jobs’ shares. It is comprised of user CPU time and system CPU time. Different programs are affected differently by CPU and system performance.\n</string>
+    <string name="cpu_time_eq1">CPU Time = CPU Clock Cycles * Clock Cycle Time</string>
+    <string name="cpu_time_eq2">CPU Time = CPU Clock Cycles / Clock Rate</string>
+    <string name="cpu_time_eq3">CPU Time = Instruction Count * CPI * Clock Cycle Time</string>
+    <string name="cpu_time_eq4">CPU Time = (Instruction Count * CPI) / Clock Rate</string>
+    <string name="cpu_time_clock_cycles">CPU Clock Cycles:</string>
+    <string name="cpu_time_cycle_time">Clock Cycle Time:</string>
+    <string name="cpu_time_clock_rate">Clock Rate:</string>
+    <string name="cpu_time_cpi">CPI:</string>
+    <string name="cpu_time_instruction_count">Instruction Count:</string>
+    <string name="cpu_time_result">CPU Time =</string>
+    <string name="glossary_cpu_clock_cycles"><b>CPU Clock Cycles:</b> The number of clock cycles a particular job will take to complete.</string>
+    <string name="glossary_clock_cycle_time"><b>Clock Cycle Time:</b> The amount of time, in seconds, that it takes for one clock cycle to complete (i.e. from an edge to edge, rising or falling).</string>
+    <string name="glossary_clock_rate"><b>Clock Rate:</b> The number of clock cycles that complete (i.e. from edge to edge, rising or falling) within one second.</string>
+    <string name="glossary_cpi"><b>CPI:</b> The number of cycles it takes to complete one instruction.</string>
+    <string name="glossary_instruction_count"><b>Instruction Count:</b> The number of instructions within a particular job.</string>
+
+    <string-array name="cpu_time_seconds">
+        <item>s</item>
+        <item>ms</item>
+        <item>us</item>
+        <item>ns</item>
+        <item>ps</item>
+    </string-array>
+    
+    <string-array name="cpu_time_hertz">
+        <item>Hz</item>
+        <item>kHz</item>
+        <item>MHz</item>
+        <item>GHz</item>
+    </string-array>
+</resources>
