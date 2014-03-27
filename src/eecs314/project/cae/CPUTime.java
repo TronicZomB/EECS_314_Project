@@ -37,24 +37,32 @@ public class CPUTime extends Fragment {
 			public void onCheckedChanged(RadioGroup group, int checkedId) {
 				switch (checkedId) {
 				case R.id.cpu_time_eq1:
+					// Create a new fragment to interact with the first equation
+					// Eq1 -> CPU Time = CPU Clock Cycles * Clock Cycle Time
 					CPUTimeEq1 eq1Fragment = new CPUTimeEq1();
 					FragmentTransaction transaction1 = getFragmentManager().beginTransaction();
 					transaction1.replace(R.id.eq_fragments, eq1Fragment);
 					transaction1.commit();
 					break;
 				case R.id.cpu_time_eq2:
+					// Create a new fragment to interact with the second equation
+					// Eq2 -> CPU Time = CPU Clock Cycles / Clock Rate
 					CPUTimeEq2 eq2Fragment = new CPUTimeEq2();
 					FragmentTransaction transaction2 = getFragmentManager().beginTransaction();
 					transaction2.replace(R.id.eq_fragments, eq2Fragment);
 					transaction2.commit();
 					break;
 				case R.id.cpu_time_eq3:
+					// Create a new fragment to interact with the third equation
+					// Eq3 -> CPU Time = Instruction count * CPI * Clock Cycle Time
 					CPUTimeEq3 eq3Fragment = new CPUTimeEq3();
 					FragmentTransaction transaction3 = getFragmentManager().beginTransaction();
 					transaction3.replace(R.id.eq_fragments, eq3Fragment);
 					transaction3.commit();
 					break;
 				case R.id.cpu_time_eq4:
+					// Create a new fragment to interact with the fourth equation
+					// Eq4 -> CPU Time = (Instruction count * CPI) / Clock Rate
 					CPUTimeEq4 eq4Fragment = new CPUTimeEq4();
 					FragmentTransaction transaction4 = getFragmentManager().beginTransaction();
 					transaction4.replace(R.id.eq_fragments, eq4Fragment);

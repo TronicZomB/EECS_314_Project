@@ -17,6 +17,9 @@ import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+/*
+ * Eq2 -> CPU Time = CPU Clock Cycles / Clock Rate
+ */
 public class CPUTimeEq2 extends Fragment {
 
 	EditText editText1, editText2;
@@ -28,6 +31,11 @@ public class CPUTimeEq2 extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View rootView = inflater.inflate(R.layout.cpu_time_eq2, container, false);
 
+		/*
+		 * ending in '1' = Clock Rate
+		 * ending in '2' = CPU Clock Cycles
+		 */
+		
 		spinner1 = (Spinner) rootView.findViewById(R.id.spinner_1);
 		
 		cpuTimeResult = (TextView) rootView.findViewById(R.id.cpu_time_result);
