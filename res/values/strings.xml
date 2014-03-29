@@ -13,18 +13,26 @@
     <string name="cpu_time_eq2">CPU Time = CPU Clock Cycles / Clock Rate</string>
     <string name="cpu_time_eq3">CPU Time = Instruction Count * CPI * Clock Cycle Time</string>
     <string name="cpu_time_eq4">CPU Time = (Instruction Count * CPI) / Clock Rate</string>
+    <string name="cpu_time_eq5">CPU Time = Instruction Count * (CPI<sub><small>Ideal</small></sub> + Memory-Stall Cycles) * Clock Cycle Time</string>
+    <string name="cpu_time_eq6">CPU Time = (Instruction Count * (CPI<sub><small>Ideal</small></sub> + Memory-Stall Cycles)) / Clock Rate</string>
     <string name="cpu_time_clock_cycles">CPU Clock Cycles:</string>
     <string name="cpu_time_cycle_time">Clock Cycle Time:</string>
     <string name="cpu_time_clock_rate">Clock Rate:</string>
     <string name="cpu_time_cpi">CPI:</string>
     <string name="cpu_time_instruction_count">Instruction Count:</string>
+    <string name="cpu_time_cpi_ideal">CPI<sub><small>Ideal</small></sub>:</string>
+    <string name="cpu_time_memory_stall">Memory-Stall Cycles:</string>
     <string name="cpu_time_result">CPU Time =</string>
     <string name="glossary_cpu_clock_cycles"><b>CPU Clock Cycles:</b> The number of clock cycles a particular job will take to complete.</string>
     <string name="glossary_clock_cycle_time"><b>Clock Cycle Time:</b> The amount of time, in seconds, that it takes for one clock cycle to complete (i.e. from an edge to edge, rising or falling).</string>
     <string name="glossary_clock_rate"><b>Clock Rate:</b> The number of clock cycles that complete (i.e. from edge to edge, rising or falling) within one second.</string>
-    <string name="glossary_cpi"><b>CPI:</b> The number of cycles it takes to complete one instruction.</string>
+    <string name="glossary_cpi"><b>CPI:</b> The average number of cycles it takes to complete one instruction.</string>
     <string name="glossary_instruction_count"><b>Instruction Count:</b> The number of instructions within a particular job.</string>
-
+	<string name="glossary_cpi_ideal"><b>CPI<sub>Ideal</sub>:</b> The ideal average number of cycles it takes to complete one instruction, though this may not be the actual CPI in practice due to memory stalls.</string>
+	<string name="glossary_memory_stalls"><b>Memory-Stall Cycles:</b> Memory-stall cycles come from cache misses (a sum of read-stalls and write-stalls).</string>
+	<string name="glossary_read_stalls"><b>Read-Stalls:</b> Read-Stall Cycles = Reads per Program × Read Miss Rate × Read Miss Penalty</string>
+	<string name="glossary_write_stalls"><b>Write-Stalls:</b> Write-Stall Cycles = (Writes per Program × Write Miss Rate × Write Miss Penalty) + Write Buffer Stalls</string>
+    
     <string-array name="cpu_time_seconds">
         <item>s</item>
         <item>ms</item>

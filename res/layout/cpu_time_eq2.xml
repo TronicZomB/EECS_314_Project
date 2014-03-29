@@ -14,21 +14,21 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/brk"
         android:layout_alignParentLeft="true" />
-    <EditText 
-        android:id="@+id/edit_text_1"
+    <Button 
+        android:id="@+id/button_1"
         android:layout_width="80dp"
         android:layout_height="wrap_content"
-        android:inputType="numberDecimal"
         android:layout_below="@id/text_view_1"
         android:layout_alignParentLeft="true"
+		android:background="?android:attr/selectableItemBackground"
         android:paddingBottom="15dp" />
     <Spinner 
         android:id="@+id/spinner_1"
         android:layout_width="80dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/text_view_1"
-        android:layout_toRightOf="@id/edit_text_1"
-        android:layout_alignBottom="@id/edit_text_1" />
+        android:layout_toRightOf="@id/button_1"
+        android:layout_alignBottom="@id/button_1" />
     <SeekBar
         android:id="@+id/seek_bar_1"
         android:layout_width="wrap_content"
@@ -41,21 +41,21 @@
         android:id="@+id/text_view_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/edit_text_1"
+        android:layout_below="@id/button_1"
         android:layout_alignParentLeft="true" />
-    <EditText 
-        android:id="@+id/edit_text_2"
+    <Button 
+        android:id="@+id/button_2"
         android:layout_width="80dp"
         android:layout_height="wrap_content"
-        android:inputType="number"
         android:layout_below="@id/text_view_2"
         android:layout_alignParentLeft="true"
+		android:background="?android:attr/selectableItemBackground"
         android:paddingBottom="15dp" />
     <SeekBar
         android:id="@+id/seek_bar_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/edit_text_2"
+        android:layout_toRightOf="@id/button_2"
         android:layout_alignLeft="@id/seek_bar_1"
         android:layout_alignParentRight="true"
         android:layout_below="@id/text_view_2" />

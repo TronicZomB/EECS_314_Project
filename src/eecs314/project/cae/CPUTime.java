@@ -30,6 +30,12 @@ public class CPUTime extends Fragment {
 		
 		RadioButton CPUTimeEq4Button = (RadioButton) rootView.findViewById(R.id.cpu_time_eq4);
 		CPUTimeEq4Button.setText(getText(R.string.cpu_time_eq4));
+		
+		RadioButton CPUTimeEq5Button = (RadioButton) rootView.findViewById(R.id.cpu_time_eq5);
+		CPUTimeEq5Button.setText(getText(R.string.cpu_time_eq5));
+		
+		RadioButton CPUTimeEq6Button = (RadioButton) rootView.findViewById(R.id.cpu_time_eq6);
+		CPUTimeEq6Button.setText(getText(R.string.cpu_time_eq6));
 	
 		RadioGroup radioGroup = (RadioGroup) rootView.findViewById(R.id.radio_group);
 		radioGroup.setOnCheckedChangeListener(new OnCheckedChangeListener() {
@@ -67,6 +73,22 @@ public class CPUTime extends Fragment {
 					FragmentTransaction transaction4 = getFragmentManager().beginTransaction();
 					transaction4.replace(R.id.eq_fragments, eq4Fragment);
 					transaction4.commit();
+					break;
+				case R.id.cpu_time_eq5:
+					// Create a new fragment to interact with the fifth equation
+					// Eq5 -> CPU Time = (Instruction count * (CPI + Memory-Stall Cycles)) * Clock Cycle Time
+					CPUTimeEq5 eq5Fragment = new CPUTimeEq5();
+					FragmentTransaction transaction5 = getFragmentManager().beginTransaction();
+					transaction5.replace(R.id.eq_fragments, eq5Fragment);
+					transaction5.commit();
+					break;
+				case R.id.cpu_time_eq6:
+					// Create a new fragment to interact with the sixth equation
+					// Eq6 -> CPU Time = (Instruction count * (CPI + Memory-Stall Cycles)) / Clock Rate
+					CPUTimeEq6 eq6Fragment = new CPUTimeEq6();
+					FragmentTransaction transaction6 = getFragmentManager().beginTransaction();
+					transaction6.replace(R.id.eq_fragments, eq6Fragment);
+					transaction6.commit();
 					break;
 				}
 			}

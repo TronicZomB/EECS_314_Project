@@ -1,16 +1,17 @@
 package eecs314.project.cae;
 
+import android.app.AlertDialog;
 import android.app.Fragment;
+import android.content.DialogInterface;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.InputFilter;
-import android.text.TextWatcher;
+import android.text.InputType;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
@@ -22,7 +23,8 @@ import android.widget.TextView;
  */
 public class CPUTimeEq2 extends Fragment {
 
-	EditText editText1, editText2;
+	Button button1, button2;
+	EditText dialogEdit1, dialogEdit2;
 	TextView textView1, textView2, cpuTimeResult;
 	SeekBar seekBar1, seekBar2;
 	Spinner spinner1;
@@ -45,8 +47,8 @@ public class CPUTimeEq2 extends Fragment {
 		seekBar1 = (SeekBar) rootView.findViewById(R.id.seek_bar_1);
 		seekBar2 = (SeekBar) rootView.findViewById(R.id.seek_bar_2);
 		
-		editText1 = (EditText) rootView.findViewById(R.id.edit_text_1);
-		editText2 = (EditText) rootView.findViewById(R.id.edit_text_2);
+		button1 = (Button) rootView.findViewById(R.id.button_1);
+		button2 = (Button) rootView.findViewById(R.id.button_2);
 
 		
 		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(), R.array.cpu_time_hertz, android.R.layout.simple_spinner_item);
@@ -80,36 +82,58 @@ public class CPUTimeEq2 extends Fragment {
 			public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
 				float value = progress / 10.0f;
 				String fvalue = Float.toString(value);
-				editText1.setText(fvalue);
+				button1.setText(fvalue);
 				cpuTimeResult.setText(CPUTimeEq2Result());
 			}
 		});
 
-		editText1.setFilters(new InputFilter[]{ new InputFilterMinMaxFloat(0.0f, 100.0f)});
 		float value = seekBar1.getProgress() / 10.0f;
 		String fvalue = Float.toString(value);
-		editText1.setText(fvalue);
-		TextWatcher textWatcher1 = new TextWatcher() {
+		button1.setText(fvalue);
+		button1.setOnClickListener(new View.OnClickListener() {
 			@Override
-			public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+			public void onClick(View v) {
+				AlertDialog.Builder builder= new AlertDialog.Builder(getActivity());
+				LayoutInflater inflater = getActivity().getLayoutInflater();
+				View view = inflater.inflate(R.layout.number_picker_dialog, null);
+				
+				TextView dialogText = (TextView) view.findViewById(R.id.dialog_text_view);
+				dialogText.setText("Enter a decimal value between 0.1 - 100.0:");
+				
+				dialogEdit1 = (EditText) view.findViewById(R.id.dialog_edit_text);
+				dialogEdit1.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL);
+				dialogEdit1.setText(button1.getText().toString());
+				
+				builder.setTitle("Set Clock Rate");
+				builder.setView(view);
+				builder.setPositiveButton("Done", new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int which) {
+						String value = dialogEdit1.getText().toString();
+						if (value.equals("")) {
+							return;
+						}
+						float valueAsFloat = Float.parseFloat(value);
+						int valueAsInt = (int) (valueAsFloat * 10.0f);
+						float truncatedValue = valueAsInt / 10.0f;
+						if (truncatedValue >= 0.1f && truncatedValue <= 100.0f) {
+							button1.setText(Float.toString(truncatedValue));
+							seekBar1.setProgress((int) (truncatedValue * 10.0f));
+							cpuTimeResult.setText(CPUTimeEq2Result());
+						}
+						else {
+							return;
+						}
+					}
+				});
+				builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int which) {
+						// Do nothing
+					}
+				});
+				
+				builder.show();
 			}
-
-			@Override
-			public void onTextChanged(CharSequence s, int start, int before, int count) {
-				String string = s.toString();
-				if (!string.equals("")) {
-					int value = (int) (Float.parseFloat(string) * 10.0);
-					seekBar1.setProgress(value);
-					editText1.setSelection(editText1.getText().length());
-					cpuTimeResult.setText(CPUTimeEq2Result());
-				}
-			}
-
-			@Override
-			public void afterTextChanged(Editable s) {
-			}
-		};
-		editText1.addTextChangedListener(textWatcher1);
+		});
 
 		textView2.setText(getText(R.string.cpu_time_clock_cycles));
 		
@@ -126,34 +150,54 @@ public class CPUTimeEq2 extends Fragment {
 			
 			@Override
 			public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-				editText2.setText(Integer.toString(progress));
+				button2.setText(Integer.toString(progress));
 				cpuTimeResult.setText(CPUTimeEq2Result());
 			}
 		});
 		
-		editText2.setFilters(new InputFilter[]{ new InputFilterMinMax(0, 9999)});
-		editText2.setText(Integer.toString(seekBar2.getProgress()));
-		TextWatcher textWatcher2 = new TextWatcher() {
+		button2.setText(Integer.toString(seekBar2.getProgress()));
+		button2.setOnClickListener(new View.OnClickListener() {
 			@Override
-			public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+			public void onClick(View v) {
+				AlertDialog.Builder builder= new AlertDialog.Builder(getActivity());
+				LayoutInflater inflater = getActivity().getLayoutInflater();
+				View view = inflater.inflate(R.layout.number_picker_dialog, null);
+				
+				TextView dialogText = (TextView) view.findViewById(R.id.dialog_text_view);
+				dialogText.setText("Enter an integer value between 0 - 9999:");
+				
+				dialogEdit2 = (EditText) view.findViewById(R.id.dialog_edit_text);
+				dialogEdit2.setInputType(InputType.TYPE_CLASS_NUMBER);
+				dialogEdit2.setText(Integer.toString(seekBar2.getProgress()));
+				
+				builder.setTitle("Set CPU Clock Cycles");
+				builder.setView(view);
+				builder.setPositiveButton("Done", new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int which) {
+						String value = dialogEdit2.getText().toString();
+						if (value.equals("")) {
+							return;
+						}
+						int valueAsInt = Integer.parseInt(value);
+						if (valueAsInt >= 0 && valueAsInt <= 9999) {
+							button2.setText(value);
+							seekBar2.setProgress(valueAsInt);
+							cpuTimeResult.setText(CPUTimeEq2Result());
+						}
+						else {
+							return;
+						}
+					}
+				});
+				builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int which) {
+						// Do nothing
+					}
+				});
+				
+				builder.show();
 			}
-
-			@Override
-			public void onTextChanged(CharSequence s, int start, int before, int count) {
-				String string = s.toString();
-				if (!string.equals("")) {
-					int value = Integer.parseInt(string);
-					seekBar2.setProgress(value);
-					editText2.setSelection(editText2.getText().length());
-					cpuTimeResult.setText(CPUTimeEq2Result());
-				}
-			}
-
-			@Override
-			public void afterTextChanged(Editable s) {
-			}
-		};
-		editText2.addTextChangedListener(textWatcher2);
+		});
 		
 		return rootView;
 	}

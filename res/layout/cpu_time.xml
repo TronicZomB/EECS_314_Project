@@ -43,6 +43,14 @@
         android:id="@+id/cpu_time_eq4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+    <RadioButton
+        android:id="@+id/cpu_time_eq5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <RadioButton
+        android:id="@+id/cpu_time_eq6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
     </RadioGroup>
 
     <View
