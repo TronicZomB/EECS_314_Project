@@ -121,11 +121,10 @@ public class CPUTimeEq6 extends Fragment {
 							return;
 						}
 						float valueAsFloat = Float.parseFloat(value);
-						int valueAsInt = (int) (valueAsFloat * 10.0f);
-						float truncatedValue = valueAsInt / 10.0f;
-						if (truncatedValue >= 0.1f && truncatedValue <= 100.0f) {
-							button1.setText(Float.toString(truncatedValue));
-							seekBar1.setProgress((int) (truncatedValue * 10.0f));
+						float finalValue = Math.round(valueAsFloat * 10.0f) / 10.0f;
+						if (finalValue >= 0.1f && finalValue <= 100.0f) {
+							button1.setText(Float.toString(finalValue));
+							seekBar1.setProgress((int) (finalValue * 10.0f));
 							cpuTimeResult.setText(CPUTimeEq6Result());
 						}
 						else {
@@ -255,11 +254,10 @@ public class CPUTimeEq6 extends Fragment {
 							return;
 						}
 						float valueAsFloat = Float.parseFloat(value);
-						int valueAsInt = (int) (valueAsFloat * 10.0f);
-						float truncatedValue = valueAsInt / 10.0f;
-						if (truncatedValue >= 0.0f && truncatedValue <= 100.0f) {
-							button3.setText(Float.toString(truncatedValue));
-							seekBar3.setProgress((int) (truncatedValue * 10.0f));
+						float finalValue = Math.round(valueAsFloat * 10.0f) / 10.0f;
+						if (finalValue >= 0.0f && finalValue <= 100.0f) {
+							button3.setText(Float.toString(finalValue));
+							seekBar3.setProgress((int) (finalValue * 10.0f));
 							cpuTimeResult.setText(CPUTimeEq6Result());
 						}
 						else {
@@ -325,11 +323,10 @@ public class CPUTimeEq6 extends Fragment {
 							return;
 						}
 						float valueAsFloat = Float.parseFloat(value);
-						int valueAsInt = (int) (valueAsFloat * 10.0f);
-						float truncatedValue = valueAsInt / 10.0f;
-						if (truncatedValue >= 0.0f && truncatedValue <= 100.0f) {
-							button4.setText(Float.toString(truncatedValue));
-							seekBar4.setProgress((int) (truncatedValue * 10.0f));
+						float finalValue = Math.round(valueAsFloat * 10.0f) / 10.0f;
+						if (finalValue >= 0.0f && finalValue <= 100.0f) {
+							button4.setText(Float.toString(finalValue));
+							seekBar4.setProgress((int) (finalValue * 10.0f));
 							cpuTimeResult.setText(CPUTimeEq6Result());
 						}
 						else {
