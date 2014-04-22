@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RadioGroup.OnCheckedChangeListener;
+import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
@@ -42,10 +43,10 @@ public class AmdahlsLaw extends Fragment {
 		
 		AmdahlsEq1Button = (RadioButton) rootView.findViewById(R.id.amdahleq1);
 		AmdahlsEq1Button.setText("Speed Up = 1/(U + C/F)");
-		AmdahlsEq1Button.setChecked(true);
 		
 		AmdahlsEq2Button = (RadioButton) rootView.findViewById(R.id.amdahleq2);
 		AmdahlsEq2Button.setText("Time Improved = U + C/F");
+		AmdahlsEq2Button.setChecked(true);
 		
 		changebar = (SeekBar) rootView.findViewById(R.id.change);
 		unchangebar = (SeekBar) rootView.findViewById(R.id.unchange);
@@ -73,6 +74,80 @@ public class AmdahlsLaw extends Fragment {
 			}
 			
 		});
+		
+		changebar.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
+			@Override
+			public void onStopTrackingTouch(SeekBar seekBar) {
+			}
+			
+			@Override
+			public void onStartTrackingTouch(SeekBar seekBar) {
+			}
+			
+			@Override
+			public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+				int changedValue = changebar.getProgress();
+				int newUnchanged = 100 - changedValue;
+				String newUnchangedString = Integer.toString(newUnchanged);
+				
+				unchangebar.setProgress(newUnchanged);
+				ubutton.setText(newUnchangedString);
+				cbutton.setText(Integer.toString(progress));
+				if (AmdahlsEq1Button.isChecked()) {
+					Eq1(changebar.getProgress(), unchangebar.getProgress(), factorbar.getProgress());
+				}
+				else {
+					Eq2(changebar.getProgress(), unchangebar.getProgress(), factorbar.getProgress());
+				}
+			}
+		});
+		unchangebar.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
+			@Override
+			public void onStopTrackingTouch(SeekBar seekBar) {
+			}
+			
+			@Override
+			public void onStartTrackingTouch(SeekBar seekBar) {
+			}
+			
+			@Override
+			public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+				int unchangedValue = unchangebar.getProgress();
+				int newChanged = 100 - unchangedValue;
+				String newChangedString = Integer.toString(newChanged);
+				
+				changebar.setProgress(newChanged);
+				cbutton.setText(newChangedString);
+				ubutton.setText(Integer.toString(progress));
+				if (AmdahlsEq1Button.isChecked()) {
+					Eq1(changebar.getProgress(), unchangebar.getProgress(), factorbar.getProgress());
+				}
+				else {
+					Eq2(changebar.getProgress(), unchangebar.getProgress(), factorbar.getProgress());
+				}
+			}
+		});
+		factorbar.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
+			@Override
+			public void onStopTrackingTouch(SeekBar seekBar) {
+			}
+			
+			@Override
+			public void onStartTrackingTouch(SeekBar seekBar) {
+			}
+			
+			@Override
+			public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+				fbutton.setText(Integer.toString(progress));
+				if (AmdahlsEq1Button.isChecked()) {
+					Eq1(changebar.getProgress(), unchangebar.getProgress(), factorbar.getProgress());
+				}
+				else {
+					Eq2(changebar.getProgress(), unchangebar.getProgress(), factorbar.getProgress());
+				}
+			}
+		});
+		
 		cbutton.setText(Integer.toString(changebar.getProgress()));
 		cbutton.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -98,8 +173,14 @@ public class AmdahlsLaw extends Fragment {
 						}
 						int valueAsInt = Integer.parseInt(value);
 						if (valueAsInt >= 0 && valueAsInt <= 100) {
-							cbutton.setText(value);
 							changebar.setProgress(valueAsInt);
+							int changedValue = changebar.getProgress();
+							int newUnchanged = 100 - changedValue;
+							String newUnchangedString = Integer.toString(newUnchanged);
+							
+							unchangebar.setProgress(newUnchanged);
+							ubutton.setText(newUnchangedString);
+							cbutton.setText(value);
 							if (AmdahlsEq1Button.isChecked()) {
 								Eq1(changebar.getProgress(), unchangebar.getProgress(), factorbar.getProgress());
 							}
@@ -146,8 +227,14 @@ public class AmdahlsLaw extends Fragment {
 						}
 						int valueAsInt = Integer.parseInt(value);
 						if (valueAsInt >= 0 && valueAsInt <= 100) {
-							ubutton.setText(value);
 							unchangebar.setProgress(valueAsInt);
+							int unchangedValue = unchangebar.getProgress();
+							int newChanged = 100 - unchangedValue;
+							String newChangedString = Integer.toString(newChanged);
+							
+							changebar.setProgress(newChanged);
+							cbutton.setText(newChangedString);
+							ubutton.setText(value);
 							if (AmdahlsEq1Button.isChecked()) {
 								Eq1(changebar.getProgress(), unchangebar.getProgress(), factorbar.getProgress());
 							}
@@ -221,17 +308,17 @@ public class AmdahlsLaw extends Fragment {
 	}
 	
 	public void Eq1(float change, float unchange, float factor){
-		cbutton.setText(Float.toString(change));
-		ubutton.setText(Float.toString(unchange));
-		fbutton.setText(Float.toString(factor));
+		//cbutton.setText(Float.toString(change));
+		//ubutton.setText(Float.toString(unchange));
+		//fbutton.setText(Float.toString(factor));
 		float speedUp = (1/(unchange + (change/factor))) * 100;
 		solution.setText("Speed up = " + Float.toString(speedUp) + "%");
 	}
 	
 	public void Eq2(float change, float unchange, float factor){
-		cbutton.setText(Float.toString(change));
-		ubutton.setText(Float.toString(unchange));
-		fbutton.setText(Float.toString(factor));
+		//cbutton.setText(Float.toString(change));
+		//ubutton.setText(Float.toString(unchange));
+		//fbutton.setText(Float.toString(factor));
 		float improved = unchange + (change/factor);
 		solution.setText("Time improved = " + Float.toString(improved) + " time quantum");
 	}
