@@ -21,6 +21,11 @@ import android.widget.TextView;
 /*
  * Eq2 -> CPU Time = CPU Clock Cycles / Clock Rate
  */
+/**
+ * 
+ * @author Steve Paley
+ *
+ */
 public class CPUTimeEq2 extends Fragment {
 
 	Button button1, button2;

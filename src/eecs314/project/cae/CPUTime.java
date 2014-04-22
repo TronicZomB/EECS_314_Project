@@ -11,6 +11,12 @@ import android.widget.RadioGroup;
 import android.widget.RadioGroup.OnCheckedChangeListener;
 import android.widget.TextView;
 
+
+/**
+ * 
+ * @author Steve Paley
+ *
+ */
 public class CPUTime extends Fragment {
 	
 	@Override

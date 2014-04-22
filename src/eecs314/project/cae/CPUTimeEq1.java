@@ -20,6 +20,11 @@ import android.widget.TextView;
 /*
  * Eq1 -> CPU Time = CPU Clock Cycles * Clock Cycle Time
  */
+/**
+ * 
+ * @author Steve Paley
+ *
+ */
 public class CPUTimeEq1 extends Fragment {
 	
 	Button button1, button2;

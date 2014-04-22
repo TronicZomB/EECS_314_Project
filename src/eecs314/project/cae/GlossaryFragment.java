@@ -81,6 +81,18 @@ public class GlossaryFragment extends DialogFragment {
 		WriteStalls.setText(getText(R.string.glossary_write_stalls));
 		WriteStallsRow.addView(WriteStalls);
 		
+		TableRow SingleCycleRow = new TableRow(getActivity());
+		SingleCycleRow.setPadding(0, 0, 0, padding);
+		TextView Singlecycle = new TextView(getActivity());
+		Singlecycle.setText(getText(R.string.glossary_single_cycle));
+		SingleCycleRow.addView(Singlecycle);
+		
+		TableRow MultiCycleRow = new TableRow(getActivity());
+		MultiCycleRow.setPadding(0, 0, 0, padding);
+		TextView Multicycle = new TextView(getActivity());
+		Multicycle.setText(getText(R.string.glossary_multi_cycle));
+		MultiCycleRow.addView(Multicycle);
+		
 		
 		glossaryParent.addView(ClockCycleTimeRow);
 		glossaryParent.addView(ClockRateRow);
@@ -89,7 +101,9 @@ public class GlossaryFragment extends DialogFragment {
 		glossaryParent.addView(CPUClockCyclesRow);
 		glossaryParent.addView(InstructionCountRow);
 		glossaryParent.addView(MemoryStallsRow);
+		glossaryParent.addView(MultiCycleRow);
 		glossaryParent.addView(ReadStallsRow);
+		glossaryParent.addView(SingleCycleRow);
 		glossaryParent.addView(WriteStallsRow);
 		
 		builder.setPositiveButton("Done", new DialogInterface.OnClickListener() {

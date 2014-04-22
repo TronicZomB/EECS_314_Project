@@ -8,6 +8,16 @@
     <string name="title_section4">Pipelining</string>
     <string name="action_glossary">Glossary</string>
     <string name="action_settings">Settings</string>
+    
+    <string name="amdahls_law_desc"><b>Amdahl\'s Law</b> is an equation used to see the expected improvement of a system when only a part of the system can be improved by a specified factor.</string>
+    
+    <string name="comparison_compute">Compute</string>
+    <string name="comparison_description">The <b>comparison</b> of two CPUs is done through the ratio between CPU A execution time and CPU B execution time in order to describe how much faster is CPU A than CPU B.</string>
+    <string name="comparison_equation">Ratio = CPU B Execution Time / CPU A Execution Time</string>
+    <string name="comparison_result">Result:</string>
+    <string name="cpu_time_1">CPU A Execution Time =</string>
+    <string name="cpu_time_2">CPU B Execution Time =</string>
+    
     <string name="cpu_time_definition"><b>CPU Time</b> is the time spent processing a given job, discounting I/O time and other jobs’ shares. It is comprised of user CPU time and system CPU time. Different programs are affected differently by CPU and system performance.\n</string>
     <string name="cpu_time_eq1">CPU Time = CPU Clock Cycles * Clock Cycle Time</string>
     <string name="cpu_time_eq2">CPU Time = CPU Clock Cycles / Clock Rate</string>
@@ -23,6 +33,9 @@
     <string name="cpu_time_cpi_ideal">CPI<sub><small>Ideal</small></sub>:</string>
     <string name="cpu_time_memory_stall">Memory-Stall Cycles:</string>
     <string name="cpu_time_result">CPU Time =</string>
+    
+    <string name="pipeline_definition">In <b>pipelining</b>, all instructions are divided into sections executed sequentially, with a clock period of the longest stage. Once a stage is completed, the equivalent stage of the next instruction is executed. Pipelining increases the number of instructions that can be executed in a given time period, but does not make a given instruction take less time to complete. Additionally, the overhead for managing pipeline stages and handling data hazards may increase the time required to execute an instruction through stalls.</string>
+   
     <string name="glossary_cpu_clock_cycles"><b>CPU Clock Cycles:</b> The number of clock cycles a particular job will take to complete.</string>
     <string name="glossary_clock_cycle_time"><b>Clock Cycle Time:</b> The amount of time, in seconds, that it takes for one clock cycle to complete (i.e. from an edge to edge, rising or falling).</string>
     <string name="glossary_clock_rate"><b>Clock Rate:</b> The number of clock cycles that complete (i.e. from edge to edge, rising or falling) within one second.</string>
@@ -32,6 +45,8 @@
 	<string name="glossary_memory_stalls"><b>Memory-Stall Cycles:</b> Memory-stall cycles come from cache misses (a sum of read-stalls and write-stalls).</string>
 	<string name="glossary_read_stalls"><b>Read-Stalls:</b> Read-Stall Cycles = Reads per Program × Read Miss Rate × Read Miss Penalty</string>
 	<string name="glossary_write_stalls"><b>Write-Stalls:</b> Write-Stall Cycles = (Writes per Program × Write Miss Rate × Write Miss Penalty) + Write Buffer Stalls</string>
+    <string name="glossary_single_cycle"><b>Single-cycle Implementation:</b> Every instruction is executed in one cycle. One instruction is executed at a time. The cycle must be as long as the longest instruction.</string>
+	<string name="glossary_multi_cycle"><b>Multi-cycle Implementation:</b> An instruction can be divided into sections and executed over multiple cycles. This allows simpler instructions to be executed more quickly, but requires a more complex processor design. Only one instruction is executed at a time.</string>
     
     <string-array name="cpu_time_seconds">
         <item>s</item>

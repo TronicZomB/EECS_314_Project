@@ -11,6 +11,98 @@
     <TextView
         android:id="@+id/section_label"
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp" />
+    
+   	<RadioGroup
+	    android:id="@+id/radio_group"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_margin="25dp"
+	    android:layout_below="@id/section_label" >
+    <RadioButton
+        android:id="@+id/amdahleq2"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
+    <RadioButton
+        android:id="@+id/amdahleq1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    </RadioGroup>
+    
+    <TextView 
+        android:id="@+id/EQResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/radio_group"
+        android:layout_alignBottom="@id/radio_group"
+        android:layout_marginLeft="24dp"
+        android:layout_toRightOf="@id/radio_group"/>
+    
+    <TextView
+        android:id="@+id/changedtxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/radio_group"
+        android:text="Changed %"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+    <Button
+        android:id="@+id/changeb"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/changedtxt" />
+    <SeekBar
+        android:id="@+id/change"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/changedtxt"
+        android:layout_toRightOf="@+id/changeb"
+        android:layout_alignParentRight="true"
+        android:max="100" />
+
+    <TextView
+        android:id="@+id/unchangedtxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/changeb"
+        android:layout_marginTop="15dp"
+        android:text="Unchanged %"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+    <Button
+        android:id="@+id/unchangeb"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/unchangedtxt" />
+    <SeekBar
+        android:id="@+id/unchange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/unchangedtxt"
+        android:layout_toRightOf="@id/unchangeb"
+        android:layout_alignParentRight="true"
+        android:max="100" />
+
+    <TextView
+        android:id="@+id/factortxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/unchangeb"
+        android:layout_marginTop="15dp"
+        android:text="Factor"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+    <Button
+        android:id="@+id/factorb"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/factortxt" />
+    <SeekBar
+        android:id="@+id/factor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/factortxt"
+        android:layout_toRightOf="@id/factorb"
+        android:layout_alignParentRight="true"
+        android:max="100" />
+    
 </RelativeLayout>

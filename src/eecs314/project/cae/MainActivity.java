@@ -10,7 +10,6 @@ import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.v13.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -86,9 +85,9 @@ public class MainActivity extends Activity implements ActionBar.TabListener {
 		case R.id.action_glossary:
 			newGlossaryFragment();
 			return true;
-		case R.id.action_settings:
-			Log.d("SETTINGS", "clicked");
-			return true;
+		//case R.id.action_settings:
+			//Log.d("SETTINGS", "clicked");
+			//return true;
 		default:
 			return super.onOptionsItemSelected(item);
 		}

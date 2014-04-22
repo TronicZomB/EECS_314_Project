@@ -21,6 +21,11 @@ import android.widget.TextView;
 /*
  * Eq6 -> CPU Time = (Instruction count * (CPI + Memory-Stalls)) / Clock Rate
  */
+/**
+ * 
+ * @author Steve Paley
+ *
+ */
 public class CPUTimeEq6 extends Fragment {
 
 	Button button1, button2, button3, button4;
