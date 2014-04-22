@@ -45,7 +45,7 @@ public class AmdahlsLaw extends Fragment {
 		AmdahlsEq1Button.setText("Speed Up = 1/(U + C/F)");
 		
 		AmdahlsEq2Button = (RadioButton) rootView.findViewById(R.id.amdahleq2);
-		AmdahlsEq2Button.setText("Time Improved = U + C/F");
+		AmdahlsEq2Button.setText("Execution Time after Improvement = U + C/F");
 		AmdahlsEq2Button.setChecked(true);
 		
 		changebar = (SeekBar) rootView.findViewById(R.id.change);
@@ -320,7 +320,7 @@ public class AmdahlsLaw extends Fragment {
 		//ubutton.setText(Float.toString(unchange));
 		//fbutton.setText(Float.toString(factor));
 		float improved = unchange + (change/factor);
-		solution.setText("Time improved = " + Float.toString(improved) + " time quantum");
+		solution.setText("Execution Time after improvement = " + Float.toString(improved) + " time quantum");
 	}
 }
 		

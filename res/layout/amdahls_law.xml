@@ -31,15 +31,6 @@
         android:layout_height="wrap_content" />
     </RadioGroup>
     
-    <TextView 
-        android:id="@+id/EQResult"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@id/radio_group"
-        android:layout_alignBottom="@id/radio_group"
-        android:layout_marginLeft="24dp"
-        android:layout_toRightOf="@id/radio_group"/>
-    
     <TextView
         android:id="@+id/changedtxt"
         android:layout_width="wrap_content"
@@ -104,5 +95,13 @@
         android:layout_toRightOf="@id/factorb"
         android:layout_alignParentRight="true"
         android:max="100" />
+    
+    <TextView 
+        android:id="@+id/EQResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:layout_below="@id/factor"
+        android:textSize="15sp"/>
     
 </RelativeLayout>

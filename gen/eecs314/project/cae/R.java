@@ -31,7 +31,7 @@ public final class R {
         public static final int pipeline_2=0x7f020002;
     }
     public static final class id {
-        public static final int EQResult=0x7f090005;
+        public static final int EQResult=0x7f09000e;
         public static final int action_glossary=0x7f090042;
         public static final int amdahleq1=0x7f090004;
         public static final int amdahleq2=0x7f090003;
@@ -41,9 +41,9 @@ public final class R {
         public static final int button_3=0x7f090029;
         public static final int button_4=0x7f09002c;
         public static final int calculate=0x7f090040;
-        public static final int change=0x7f090008;
-        public static final int changeb=0x7f090007;
-        public static final int changedtxt=0x7f090006;
+        public static final int change=0x7f090007;
+        public static final int changeb=0x7f090006;
+        public static final int changedtxt=0x7f090005;
         public static final int comparison_compute=0x7f090015;
         public static final int comparison_description=0x7f09000f;
         public static final int comparison_equation=0x7f090010;
@@ -64,9 +64,9 @@ public final class R {
         public static final int edit_cpu_time_1=0x7f090012;
         public static final int edit_cpu_time_2=0x7f090014;
         public static final int eq_fragments=0x7f09001f;
-        public static final int factor=0x7f09000e;
-        public static final int factorb=0x7f09000d;
-        public static final int factortxt=0x7f09000c;
+        public static final int factor=0x7f09000d;
+        public static final int factorb=0x7f09000c;
+        public static final int factortxt=0x7f09000b;
         public static final int glossary_parent=0x7f09002e;
         public static final int image_view_1=0x7f090032;
         public static final int image_view_2=0x7f090033;
@@ -95,9 +95,9 @@ public final class R {
         public static final int text_view_2=0x7f090024;
         public static final int text_view_3=0x7f090028;
         public static final int text_view_4=0x7f09002b;
-        public static final int unchange=0x7f09000b;
-        public static final int unchangeb=0x7f09000a;
-        public static final int unchangedtxt=0x7f090009;
+        public static final int unchange=0x7f09000a;
+        public static final int unchangeb=0x7f090009;
+        public static final int unchangedtxt=0x7f090008;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
