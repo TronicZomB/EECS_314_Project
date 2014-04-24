@@ -320,7 +320,7 @@ public class AmdahlsLaw extends Fragment {
 		//ubutton.setText(Float.toString(unchange));
 		//fbutton.setText(Float.toString(factor));
 		float improved = unchange + (change/factor);
-		solution.setText("Execution Time after improvement = " + Float.toString(improved) + " time quantum");
+		solution.setText("Execution Time after improvement = " + Float.toString(improved) + "%");
 	}
 }
 		
