@@ -101,8 +101,8 @@ public class Pipelining extends Fragment {
 						float pipelineTime = PipelineCalc.basicPipe(stageLength, stageCount, instructionCount) + PipelineCalc.totalWaste(stageLength, stallCycle);
 						float comparison = singleCycleTime / pipelineTime;
 						
-						result.setText("A single cycle implementation would take " + Float.toString(singleCycleTime) + " time quantum to complete.\n"
-								+ "A pipelined implementation would take " + Float.toString(pipelineTime) + " time quantum to complete.\n"
+						result.setText("A single cycle implementation would take " + Float.toString(singleCycleTime) + " time quanta to complete.\n"
+								+ "A pipelined implementation would take " + Float.toString(pipelineTime) + " time quanta to complete.\n"
 								+ "The pipelined implementation offers a " + Float.toString(comparison) + " times speed up over a single cycle implementation.");
 					}
 				}
@@ -120,8 +120,8 @@ public class Pipelining extends Fragment {
 						float pipelineTime = PipelineCalc.basicPipe(stageLength, stageCount, instructionCount);
 						float comparison = singleCycleTime / pipelineTime;
 						
-						result.setText("A single cycle implementation would take " + Float.toString(singleCycleTime) + " time quantum to complete.\n"
-								+ "A pipelined implementation would take " + Float.toString(pipelineTime) + " time quantum to complete.\n"
+						result.setText("A single cycle implementation would take " + Float.toString(singleCycleTime) + " time quanta to complete.\n"
+								+ "A pipelined implementation would take " + Float.toString(pipelineTime) + " time quanta to complete.\n"
 								+ "The pipelined implementation offers a " + Float.toString(comparison) + " times speed up over a single cycle implementation.");
 					}
 				}
@@ -139,8 +139,8 @@ public class Pipelining extends Fragment {
 						float pipelineTime = PipelineCalc.basicPipe(stageLength, stageCount, instructionCount) + PipelineCalc.totalWaste(stageLength, stallCycle);
 						float comparison = singleCycleTime / pipelineTime;
 						
-						result.setText("A single cycle implementation would take " + Float.toString(singleCycleTime) + " time quantum to complete.\n"
-								+ "A pipelined implementation would take " + Float.toString(pipelineTime) + " time quantum to complete.\n"
+						result.setText("A single cycle implementation would take " + Float.toString(singleCycleTime) + " time quanta to complete.\n"
+								+ "A pipelined implementation would take " + Float.toString(pipelineTime) + " time quanta to complete.\n"
 								+ "The pipelined implementation offers a " + Float.toString(comparison) + " times speed up over a single cycle implementation.");
 					}
 				}
@@ -157,8 +157,8 @@ public class Pipelining extends Fragment {
 						float singleCycleLength = stageLength * stageCount;
 						float singleCycleTime = PipelineCalc.singleCycle(singleCycleLength, instructionCount);
 						
-						result.setText("A single cycle implementation would take " + Float.toString(singleCycleTime) + " time quantum to complete.\n"
-								+ "A pipelined implementation would take " + Float.toString(pipelineTime) + " time quantum to complete.\n"
+						result.setText("A single cycle implementation would take " + Float.toString(singleCycleTime) + " time quanta to complete.\n"
+								+ "A pipelined implementation would take " + Float.toString(pipelineTime) + " time quanta to complete.\n"
 								+ "The pipelined implementation offers a " + Float.toString(singleCycleTime/pipelineTime) + " times speed up over a single cycle implementation.");
 					}
 				}
